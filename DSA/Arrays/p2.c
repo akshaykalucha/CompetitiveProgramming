@@ -13,8 +13,8 @@ int main(){
     int n = 5;
     int out[n];
     int i;
-    for(i = n; i >= 0; i--){
-        out[i - 1] = arr[n - i];
+    for(i = n; i >= 0; i--){ // traversing the array from last element
+        out[i - 1] = arr[n - i]; // corresponding last element of out is equal to the corresponding firs element of arr
     }
     for(i = 0; i< n; i++){
         printf("%d ", out[i]);
