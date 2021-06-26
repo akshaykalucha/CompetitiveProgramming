@@ -66,3 +66,44 @@ int main()
         printf("\n");
     }
 }
+
+/* python adaptation: 
+m, n = map(int, input("Enter rows and columns of FIRST matrix: ").split())
+arr = []
+for i in range(m):
+    zz = list(map(int, input("Enter the values in row no {} matrix: ".format(i)).split()))
+    arr.append(zz)
+print("\n\nYour first matrix is: ")
+for i in range(m):
+    print(*arr[i])
+
+z, p = map(int, input("Enter rows and columns of SECOND matrix: ").split())
+if n != z:
+    print("Sorry matrices are not compatible to multiply")
+brr = []
+for i in range(z):
+    zz = list(map(int, input("Enter the values in row no {} matrix: ".format(i)).split()))
+    brr.append(zz)
+print("\n\nYour SECOND matrix is: ")
+for i in range(z):
+    print(*brr[i])
+
+# multiplying the two matrix
+
+prod = []
+for i in range(m):
+    prodmax = []
+    sum = 0
+    for j in range(p):
+        for k in range(z):
+            sum += arr[i][k] * brr[k][j]
+        prodmax.append(sum)
+        sum = 0
+    prod.append(prodmax)
+    
+
+# printing the product matrux
+print("\n\nYour product matrix is: ")
+for i in range(m):
+    print(*prod[i])
+*/
