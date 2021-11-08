@@ -7,5 +7,7 @@ for _ in range(int(input())):
             odd += 1
     if odd == 0 or odd == 1:
         print(0)
+    elif odd == 2:
+        print(1)
     else:
-        print(odd-1)
+        print((odd-1)//2)
