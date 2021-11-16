@@ -1,20 +1,20 @@
-n = int(input())
-for i in range(n):
-   t = input().split(" ")
-   a = int(t[0])
-   b = int(t[1])
-   c = int(t[2])
-   m = max(a,b,c)
-   if(a == b == c):
-      a = 1
-      b = 1
-      c = 1
-   elif(a == b == m or b == c == m or c == a == m):
-      a = (1, m - a + 1)[a != m]
-      b = (1, m - b + 1)[b != m]
-      c = (1, m - c + 1)[c != m]
+for _ in range(int(input())):
+   a, b, c = map(int, input().split())
+   if a == b == c:
+      print(a+1, b+1, c+1)
    else:
-      a = (0, m - a + 1)[a != m]
-      b = (0, m - b + 1)[b != m]
-      c = (0, m - c + 1)[c != m]
-   print(a,b,c)
+      m = max(a,b,c)
+      if a==b==m or a==c==m or b==c==m:
+         if a!=m:
+            print(abs(a-m)+1, m+1, m+1)
+         elif b!=m:
+            print(m+1, abs(b-m)+1, m+1)
+         else:
+            print(m+1, m+1, abs(c-m)+1)
+      else:
+         if a==m:
+            print(0, abs(b-m)+1, abs(c-m)+1)
+         elif b==m:
+            print(abs(a-m)+1, 0, abs(c-m)+1)
+         else:
+            print(abs(a-m)+1, abs(b-m)+1, 0)
