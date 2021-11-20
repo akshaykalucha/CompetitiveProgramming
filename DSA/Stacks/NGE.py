@@ -227,23 +227,23 @@ sys.stdin = open('DSA/Stacks/input.txt', 'r')
 
 # Nearest smaller element to right, trabersing from end
 
-arr = list(map(int, input().split()))
-stack = []
-output = [0]*len(arr)
+# arr = list(map(int, input().split()))
+# stack = []
+# output = [0]*len(arr)
 
-i = len(arr)-1
-while i>=0:
-    while len(stack)!=0:
-        if arr[stack[-1]]<arr[i]:
-            output[i] = stack[-1]
-            break
-        else:
-            stack.pop()
-    if len(stack)==0:
-        output[i]=-1
-    stack.append(i)
-    i-=1
-for i in range(len(output)):
-    if output[i]!=-1:
-        output[i]=arr[output[i]]
-print(output)
+# i = len(arr)-1
+# while i>=0:
+#     while len(stack)!=0:
+#         if arr[stack[-1]]<arr[i]:
+#             output[i] = stack[-1]
+#             break
+#         else:
+#             stack.pop()
+#     if len(stack)==0:
+#         output[i]=-1
+#     stack.append(i)
+#     i-=1
+# for i in range(len(output)):
+#     if output[i]!=-1:
+#         output[i]=arr[output[i]]
+# print(output)
