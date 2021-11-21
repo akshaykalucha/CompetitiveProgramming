@@ -24,6 +24,9 @@ for _ in range(int(input())):
             flag = True
             moves = 0
             while flag:
+                if len(set(imp)) != len(imp):
+                    flag = False
+                    break
                 if len(imp)==0:
                     break
                 for i in range(len(imp)-1):
