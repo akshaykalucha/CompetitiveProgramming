@@ -48,3 +48,5 @@ for i in range(len(arr)):
     if area > ar:
         ar = area
 print(ar)
+print(NSL)
+print(NSR)
