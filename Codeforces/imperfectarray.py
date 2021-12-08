@@ -3,27 +3,21 @@
 # sys.stdin = open('DSA/Stacks/input.txt', 'r')
 
 import math
-def isPerfectSquare(x):     
-    if(x >= 0):
-        sr = math.sqrt(x)
-        return ((sr*sr) == float(x))
-    return False
+
+def is_square(i: int) -> bool:
+    return i == math.isqrt(i) ** 2
 
 
 for _ in range(int(input())):
     n = int(input())
     ll = list(map(int, input().split()))
-    flag = False
-    for i in range(len(ll)-1):
-        currprod = ll[i]
-        nextlst = ll[i+1:]
-        for j in range(len(nextlst)):
-            currprod*=nextlst[j]
-            if isPerfectSquare(currprod)==False:
-                flag=True
-                break
+    flag = True
+    for i in range(len(ll)):
+        if is_square(ll[i])==False:
+            flag = False
+            break
     if flag:
-        print("YES")
-    else:
         print("NO")
+    else:
+        print("YES")
         
