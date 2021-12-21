@@ -1,3 +1,7 @@
+import sys
+sys.stdout = open('DSA/Stacks/output.txt', 'w')
+sys.stdin = open('DSA/Stacks/input.txt', 'r')
+
 def find(a,s):
     i = len(s) -1
     j = len(a) -1
