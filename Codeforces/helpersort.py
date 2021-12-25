@@ -1,3 +1,7 @@
+import sys
+sys.stdout = open('DSA/Stacks/output.txt', 'w')
+sys.stdin = open('DSA/Stacks/input.txt', 'r')
+
 t = int(input())
 for _ in range(t):
     n = int(input())
