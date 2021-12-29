@@ -2,19 +2,24 @@
 # sys.stdout = open('DSA/Stacks/output.txt', 'w')
 # sys.stdin = open('DSA/Stacks/input.txt', 'r')
 
-for i in range(int(input())):
-    line = input()
-    rows, cols, x1, y1, x2, y2 = map(int, line.split(' '))
- 
-    if x2 >= x1:
-        x_value = x2 - x1
-    else:
-        x_value = 2*rows - (x1 + x2)
- 
-    if y2 >= y1:
-        y_value = y2 - y1
-    else:
-        y_value = 2*cols - (y1 + y2)
- 
-    ans = min(x_value, y_value)
-    print(ans)
+for _ in range(int(input())):
+    n, m, rb,cb,rd,cd = map(int, input().split())
+    dr=1
+    dc=1
+    t = 0 
+    
+    while True:
+        if rb==rd or cb==cd:
+            break
+        if dr==1 and rb==n:
+            dr = -1
+        elif dr==-1 and rb==1:
+            dr=1
+        if dc==1 and cb==m:
+            dc=-1
+        elif dc==-1 and cb==1:
+            dc=1
+        rb+=dr
+        cb+=dc
+        t+=1
+    print(t)
