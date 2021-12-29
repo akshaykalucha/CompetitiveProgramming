@@ -5,11 +5,25 @@
 for _ in range(int(input())):
     n = int(input())
     ll = list(input())
-    ss = 0
-    for i in range(len(ll)-1):
-        if ll[i+1]<ll[i]:
-            ss=i+1
+    n=len(ll)
+    i = 0
+    if n==1:
+        print(ll[0]+ll[0])
+    else:
+        if ll[1]>=ll[0]:
+            print(ll[0]+ll[0])
         else:
-            break
-    mystr = "".join(ll[:ss+1])
-    print(mystr+mystr[::-1])
+            while i<=n-2:
+                if ll[i]<ll[i+1]:
+                    break
+                elif ll[i+1]<ll[i]:
+                    i+=1
+                elif ll[i+1]==ll[i]:
+                    for j in range(i+1,n):
+                        if ll[j]>ll[i]:
+                            break
+                        elif ll[j]<=ll[i]:
+                            i=j
+                            continue
+            mystr="".join(ll[:i+1])
+            print(mystr+mystr[::-1])
