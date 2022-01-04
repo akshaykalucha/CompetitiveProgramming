@@ -10,5 +10,6 @@ for _ in range(int(input())):
         s=s.replace('101', '121')
         s=s.replace('10', '11')
         s=s.replace('01', '11')
+        
         s=s.replace('2', '0')
     print(''.join(s))
