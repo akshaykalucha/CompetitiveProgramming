@@ -9,7 +9,6 @@ for _ in range(int(input())):
     for i in range(k):
         ss+=chr(oo)
         if oo==122:
-            
             oo=1
         else:
             oo+=1
