@@ -264,21 +264,20 @@
 #         output[i]=arr[output[i]]
 # print(output)
 
-arr = [5,8,6,3,9,1,4,10]
+arr = [1,5,8,6,3,9,1,4,10]
 st = []
 output = [0]*len(arr)
 
 i = len(arr) - 1
-while i >= 0:
+for i in range(len(arr)):
     while len(st) != 0:
-        if arr[st[-1]] > arr[i]:
-            output[i] = st[-1]
-            break
-        else:
+        if arr[i] < arr[st[-1]]:
+            output[st[-1]] = i
             st.pop()
+        else:
+            break
     st.append(i)
-    i -= 1
-    
+
 for i in range(len(output)):
     if output[i] != 0:
         output[i] = arr[output[i]]
