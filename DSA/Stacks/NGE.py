@@ -5,24 +5,24 @@
 
 #Using O(n^2)
 
-arr = [3,7,8,7,4,1,3,2,8]
-output = [0]*len(arr)
-st = []
-i = len(arr)-1
-while i>=0:
-    while len(st)!=0:
-        if arr[i]>arr[st[-1]]:
-            output[st[-1]]=i
-            st.pop()
-        else:
-            break
-    st.append(i)
-    i-=1
-while len(st)!=0:
-    output[st[-1]]=-1
-    st.pop()
-print(output)
-print(arr)
+# arr = [3,7,8,7,4,1,3,2,8]
+# output = [0]*len(arr)
+# st = []
+# i = len(arr)-1
+# while i>=0:
+#     while len(st)!=0:
+#         if arr[i]>arr[st[-1]]:
+#             output[st[-1]]=i
+#             st.pop()
+#         else:
+#             break
+#     st.append(i)
+#     i-=1
+# while len(st)!=0:
+#     output[st[-1]]=-1
+#     st.pop()
+# print(output)
+# print(arr)
 
 # for i in range(len(arrMain)):
 #     currEl = arrMain[i]
@@ -263,3 +263,23 @@ print(arr)
 #     if output[i]!=-1:
 #         output[i]=arr[output[i]]
 # print(output)
+
+arr = [5,8,6,3,9,1,4,10]
+st = []
+output = [0]*len(arr)
+
+i = len(arr) - 1
+while i >= 0:
+    while len(st) != 0:
+        if arr[st[-1]] > arr[i]:
+            output[i] = st[-1]
+            break
+        else:
+            st.pop()
+    st.append(i)
+    i -= 1
+    
+for i in range(len(output)):
+    if output[i] != 0:
+        output[i] = arr[output[i]]
+print(arr, output)
