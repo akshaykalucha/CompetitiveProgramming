@@ -1,6 +1,6 @@
-# import sys
-# sys.stdout = open('Codeforces/output.txt', 'w')
-# sys.stdin = open('Codeforces/input.txt', 'r')
+import sys
+sys.stdout = open('Codeforces/output.txt', 'w')
+sys.stdin = open('Codeforces/input.txt', 'r')
 
 for _ in range(int(input())):
     a, b = map(int, input().split())
